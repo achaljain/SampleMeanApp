@@ -1,0 +1,17 @@
+<ng-include src="'views/movie-nav.html'"></ng-include>
+<h3>{{ movie.title }}</h3>
+<youtube src="movie.url"></youtube>
+
+<form role="form" ng-submit="addComment()">
+  <div class="form-group">
+    <label for="title" class="control-label">Comments</label>
+    <input type="text" ng-model="comment.body" class="form-control" id="title" placeholder="Write your comment here">
+    <br/>
+    <input type="submit" class="btn btn-primary" value="Comment">
+  </div>
+</form>
+<div class="row marketing">
+  <div ng-repeat="obj in comments">
+    <b>{{ obj.author }}</b> : {{ obj.body }}
+  </div>
+</div>
